@@ -1,0 +1,28 @@
+<!-- templates/post_new.html -->
+{% extends 'base/_base_index.html' %}
+{% load widget_tweaks %}
+{% block content %}
+<h1>Novo Post</h1>
+<form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="form-group py-2">
+        <label class="label">Titulo<span style="color: red;">*</span></label>
+        {% render_field form.title class="form-control form-control-lg" type="text" %}
+    </div>
+    <div class="form-group py-2">
+        <label class="label">Autor<span style="color: red;">*</span></label>
+        {% render_field form.author class="form-control form-control-lg" type="text" %} 
+    </div>
+    <div class="form-group py-2">
+        <label class="label">Descrição<span style="color: red;">*</span></label>
+        {% render_field form.body class="form-control form-control-lg" type="text" %} 
+    </div>
+    <div class="form-group py-2">
+        <label class="label">CoverImagem<span style="color: red;">*</span></label>
+        {% render_field form.image class="form-control form-control-lg" type="file" %} 
+    </div> 
+    <div class="form-group py-2">
+        <input class="btn btn-success btn-lg shadow-sm" type="submit" value="Salvar" />
+    </div> 
+</form>
+{% endblock content %}

@@ -1,0 +1,12 @@
+{% extends 'base/_base_index.html' %}
+{% block content %}
+{% for post in object_list %} 
+<div class="col-sm-4 py-3">
+    <div class="post_card py-3">
+        <img class="card-img-top" src="media/{{ post.image }}" alt="Card image" style="height: 20rem;">
+        <h2><a class="card-title link-secondary " href="{% url 'post_detail' post.pk %}">{{ post.title }}</a></h2>
+        <p class="card-text">{{ post.body }}</p>
+    </div>
+</div> 
+{% endfor %}
+{% endblock content %}

@@ -1,0 +1,12 @@
+<!-- templates/post_detail.html -->
+{% extends 'base/_base_index.html' %}
+{% load static %}
+{% block content %}
+<div class="text-center">
+  <p><a href="{% url 'post_edit' post.pk %}">+ Editar Post</a></p>
+  <p><a href="{% url 'post_delete' post.pk %}">+ Deletar Post</a></p>
+  <img class="post_image" src="{{ post.image.url }}" alt="{{ post.title }}">
+  <h2>{{ post.title }}</h2>
+  <p>{{ post.body }}</p>
+</div>  
+{% endblock content %}
